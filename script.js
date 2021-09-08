@@ -6,6 +6,7 @@ function setup() {
   x = 50;
   y = 200;
   v = 5;
+  v2 = 5;
 }
 
 function draw() {
@@ -13,13 +14,18 @@ function draw() {
 
   ellipse(x, y,50,50);
   x = x + v;
-  y = y + v;
+  y = y + v2;
 
-  if(x <= 0 || x >= 500) {
+  square(225,200,50,50)
+
+  if(x <= 25 || x >= 475) {
     v = v * -1;
   }
 
-  if(y <= 0 || y >= 400) {
-    v = v * -1;
+  if(y <= 25 || y >= 375) {
+    v2 = v2 * -1;
   }
+
+  if()
+
 }
