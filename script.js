@@ -1,63 +1,45 @@
 class Bal{
-  ellipse(x, y,50,50);
-  x = x + v;
-  y = y + v2;
-
-  if(x <= 25 || x >= 475) {
-    v = v * -1;
+  
+  constructor (x , y, w, h, vx, vy, c) {
+    this.x = x;
+    this.y = y;
+    this.with = w;
+    this.height = h;
+    this.vx = vx;
+    this.vy = vy;
+    this.c = c;
   }
 
-  if(y <= 25 || y >= 475) {
-    v2 = v2 * -1;
+  drawBall(){
+    fill(this.c)
+    ellipse(this.x, this.y,50,50);
+    this.x = this.x + this.vx;
+    this.y = this.y + this.vy;
+ 
+
+    if(this.x <= 25 || this.x >= 475) {
+      this.vx = this.vx * -1;
+    }
+
+    if(this.y <= 25 || this.y >= 475) {
+      this.vy = this.vy * -1;
+    }
   }
 }
 
 
-var x, y, v;
+var bal1, bal2;
 
 function setup() {
   createCanvas(500, 500);
+  background(150);
 
-  x = 50;
-  y = 200;
-  v = 5;
-  v2 = 5;
+  bal1 = new Bal(30,200,50,50,5,5, "green");
+
+  bal2 = new Bal(100,80,50,50,5,5, "blue"); 
 }
 
 function draw() {
-  background(225);
-
-  ellipse(x, y,50,50);
-  x = x + v;
-  y = y + v2;
-
-  square(225,225,50,50)
-
-  if(x <= 25 || x >= 475) {
-    v = v * -1;
-  }
-
-  if(y <= 25 || y >= 475) {
-    v2 = v2 * -1;
-  }
-
-}
-
-function draw() {
-  background(225);
-
-  ellipse(x, y,50,50);
-  x = x + v;
-  y = y + v2;
-
-  square(225,225,50,50)
-
-  if(x <= 25 || x >= 475) {
-    v = v * -1;
-  }
-
-  if(y <= 25 || y >= 475) {
-    v2 = v2 * -1;
-  }
-
+  bal1.drawBall();
+  bal2.drawBall();
 }
