@@ -7,8 +7,10 @@ class Bal{
     this.height = h;
     this.vx = vx;
     this.vy = vy;
-    this.c = c;
+    this.c = c; 
   }
+
+  
 
   drawBall(){
     fill(this.c)
